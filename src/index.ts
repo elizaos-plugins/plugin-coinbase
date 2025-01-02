@@ -20,3 +20,5 @@ export * from "./plugins/trade";
 export * from "./plugins/tokenContract";
 export * from "./plugins/webhooks";
 export * from "./plugins/advancedTrade";
+
+export * from "../advanced-sdk-ts/src/index.ts';
