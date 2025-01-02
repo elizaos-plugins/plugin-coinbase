@@ -70,13 +70,19 @@ export const createWebhookAction: Action = {
             )
         );
     },
-    handler: async (
+    handler: async ({
+        runtime,
+        message,
+        state,
+        options,
+        callback,
+    }: {
         runtime: IAgentRuntime,
-        _message: Memory,
+        message: Memory,
         state: State,
-        _options: any,
+        options: any,
         callback: HandlerCallback
-    ) => {
+    }) => {
         elizaLogger.debug("Starting CREATE_WEBHOOK handler...");
 
         try {

@@ -240,13 +240,19 @@ export const sendMassPayoutAction: Action = {
             )
         );
     },
-    handler: async (
+    handler: async ({
+        runtime,
+        message,
+        state,
+        options: _options,
+        callback,
+    }: {
         runtime: IAgentRuntime,
         message: Memory,
         state: State,
-        _options: any,
+        options: any,
         callback: HandlerCallback
-    ) => {
+    }) => {
         elizaLogger.debug("Starting SEND_MASS_PAYOUT handler...");
         try {
             Coinbase.configure({

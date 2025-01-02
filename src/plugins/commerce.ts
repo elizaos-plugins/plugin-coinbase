@@ -136,13 +136,19 @@ export const createCoinbaseChargeAction: Action = {
         // Ensure Coinbase Commerce API key is available
         return coinbaseCommerceKeyOk;
     },
-    handler: async (
+    handler: async ({
+        runtime,
+        message,
+        state,
+        options: _options,
+        callback,
+    }: {
         runtime: IAgentRuntime,
         message: Memory,
         state: State,
-        _options: any,
+        options: any,
         callback: HandlerCallback
-    ) => {
+    }) => {
         elizaLogger.info("Composing state for message:", message);
         if (!state) {
             state = (await runtime.composeState(message)) as State;
@@ -328,13 +334,19 @@ export const getAllChargesAction: Action = {
         // Ensure Coinbase Commerce API key is available
         return coinbaseCommerceKeyOk;
     },
-    handler: async (
+    handler: async ({
+        runtime,
+        message,
+        state,
+        options: _options,
+        callback,
+    }: {
         runtime: IAgentRuntime,
         message: Memory,
         state: State,
-        _options: any,
+        options: any,
         callback: HandlerCallback
-    ) => {
+    }) => {
         try {
             elizaLogger.info("Composing state for message:", message);
             if (!state) {
@@ -393,13 +405,19 @@ export const getChargeDetailsAction: Action = {
         // Ensure Coinbase Commerce API key is available
         return coinbaseCommerceKeyOk;
     },
-    handler: async (
+    handler: async ({
+        runtime,
+        message,
+        state,
+        options: _options,
+        callback,
+    }: {
         runtime: IAgentRuntime,
         message: Memory,
         state: State,
-        _options: any,
+        options: any,
         callback: HandlerCallback
-    ) => {
+    }) => {
         elizaLogger.info("Composing state for message:", message);
         if (!state) {
             state = (await runtime.composeState(message)) as State;

@@ -70,13 +70,19 @@ export const deployTokenContractAction: Action = {
             )
         );
     },
-    handler: async (
+    handler: async ({
+        runtime,
+        message,
+        state,
+        options,
+        callback,
+    }: {
         runtime: IAgentRuntime,
-        _message: Memory,
+        message: Memory,
         state: State,
-        _options: any,
+        options: any,
         callback: HandlerCallback
-    ) => {
+    }) => {
         elizaLogger.debug("Starting DEPLOY_TOKEN_CONTRACT handler...");
 
         try {
@@ -299,13 +305,19 @@ export const invokeContractAction: Action = {
             )
         );
     },
-    handler: async (
+    handler: async ({
+        runtime,
+        message,
+        state,
+        options,
+        callback,
+    }: {
         runtime: IAgentRuntime,
-        _message: Memory,
+        message: Memory,
         state: State,
-        _options: any,
+        options: any,
         callback: HandlerCallback
-    ) => {
+    }) => {
         elizaLogger.debug("Starting INVOKE_CONTRACT handler...");
 
         try {
@@ -466,13 +478,19 @@ export const readContractAction: Action = {
             )
         );
     },
-    handler: async (
+    handler: async ({
+        runtime,
+        message,
+        state,
+        options,
+        callback,
+    }: {
         runtime: IAgentRuntime,
-        _message: Memory,
+        message: Memory,
         state: State,
-        _options: any,
+        options: any,
         callback: HandlerCallback
-    ) => {
+    }) => {
         elizaLogger.debug("Starting READ_CONTRACT handler...");
 
         try {

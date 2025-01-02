@@ -109,13 +109,19 @@ export const executeTradeAction: Action = {
             )
         );
     },
-    handler: async (
+    handler: async ({
+        runtime,
+        message,
+        state,
+        options: _options,
+        callback,
+    }: {
         runtime: IAgentRuntime,
-        _message: Memory,
+        message: Memory,
         state: State,
-        _options: any,
+        options: any,
         callback: HandlerCallback
-    ) => {
+    }) => {
         elizaLogger.debug("Starting EXECUTE_TRADE handler...");
 
         try {
