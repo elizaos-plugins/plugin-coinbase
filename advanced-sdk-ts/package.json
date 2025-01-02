@@ -1,16 +1,13 @@
 {
     "name": "@coinbase-samples/advanced-sdk-ts",
     "version": "0.1.0",
-    "main": "dist/main.js",
+    "main": "src/index.ts",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "build": "tsc",
         "lint": "eslint . --ext .js,.ts",
         "format": "prettier --write \"**/*.{js,ts,tsx,json,css,md}\""
     },
-    "files": [
-        "dist/"
-    ],
     "keywords": [],
     "author": "",
     "license": "ISC",
