@@ -21,5 +21,24 @@
     "build": "tsup --format esm --dts",
     "dev": "tsup --format esm --dts --watch",
     "lint": "eslint --fix  --cache ."
+  },
+  "pluginType": "elizaos:plugin:1.0.0",
+   "pluginParameters": {
+      "type": "object",
+      "required": ["apiKey", "apiSecret"],
+      "properties": {
+          "apiKey": {
+              "type": "string",
+              "description": "API key for accessing Coinbase Advanced API"
+          },
+          "apiSecret": {
+              "type": "string",
+              "description": "API secret for accessing Coinbase Advanced API"
+          }
+      }
+  },
+  "pluginEnv": {
+      "API_KEY": "apiKey",
+      "API_SECRET": "apiSecret"
   }
 }
