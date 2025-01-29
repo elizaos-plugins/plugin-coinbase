@@ -1,3 +1,4 @@
+import * as _elizaos_core from '@elizaos/core';
 import { Provider, Action, Plugin } from '@elizaos/core';
 
 declare const massPayoutProvider: Provider;
@@ -40,18 +41,18 @@ declare const executeAdvancedTradeAction: Action;
 declare const advancedTradePlugin: Plugin;
 
 declare const plugins: {
-    coinbaseMassPaymentsPlugin: any;
-    coinbaseCommercePlugin: any;
-    tradePlugin: any;
-    tokenContractPlugin: any;
-    webhookPlugin: any;
-    advancedTradePlugin: any;
+    coinbaseMassPaymentsPlugin: Plugin;
+    coinbaseCommercePlugin: Plugin;
+    tradePlugin: Plugin;
+    tokenContractPlugin: Plugin;
+    webhookPlugin: Plugin;
+    advancedTradePlugin: Plugin;
 };
 declare const mergedPlugins: {
-    actions: any[];
-    providers: any[];
-    evaluators: any[];
-    services: any[];
+    actions: _elizaos_core.Action[][];
+    providers: _elizaos_core.Provider[][];
+    evaluators: _elizaos_core.Evaluator[][];
+    services: _elizaos_core.Service[][];
 };
 
 export { advancedTradePlugin, appendTradeToCsv, chargeProvider, coinbaseCommercePlugin, coinbaseMassPaymentsPlugin, createCharge, createCoinbaseChargeAction, createWebhookAction, mergedPlugins as default, deployTokenContractAction, executeAdvancedTradeAction, executeTradeAction, getAllCharges, getAllChargesAction, getChargeDetails, getChargeDetailsAction, invokeContractAction, massPayoutProvider, plugins, readContractAction, sendMassPayoutAction, tokenContractPlugin, tradePlugin, tradeProvider, webhookPlugin, webhookProvider };
