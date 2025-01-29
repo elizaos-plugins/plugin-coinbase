@@ -1,4 +1,3 @@
-import { Plugin } from "@elizaos/core";
 import { coinbaseMassPaymentsPlugin } from "./plugins/massPayments";
 import { coinbaseCommercePlugin } from "./plugins/commerce";
 import { tradePlugin } from "./plugins/trade";
@@ -15,7 +14,7 @@ export const plugins = {
     advancedTradePlugin,
 };
 
-function mergePlugins(base: object, plugins: Plugin[]) {
+function mergePlugins(base: object, plugins: any[]) {
     return {
         ...base,
         actions: [...plugins.map(plugin => plugin.actions)],
@@ -29,10 +28,3 @@ const mergedPlugins = mergePlugins({
     description: 'Coinbase plugin. Enables various functionalities using the Coinbase SDK.',
 }, Object.values(plugins));
 export default mergedPlugins;
-
-export * from "./plugins/massPayments";
-export * from "./plugins/commerce";
-export * from "./plugins/trade";
-export * from "./plugins/tokenContract";
-export * from "./plugins/webhooks";
-export * from "./plugins/advancedTrade";
