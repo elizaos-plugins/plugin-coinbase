@@ -39,6 +39,7 @@ export default defineConfig({
         "advanced-sdk-ts",
         "jsonwebtoken",
         "whatwg-url",
+        "zod",
         "@elizaos/core",
     ],
     platform: "node",
