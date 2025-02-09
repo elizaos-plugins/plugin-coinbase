@@ -13,10 +13,3 @@ export const plugins = {
     webhookPlugin,
     advancedTradePlugin,
 };
-
-export * from "./plugins/massPayments";
-export * from "./plugins/commerce";
-export * from "./plugins/trade";
-export * from "./plugins/tokenContract";
-export * from "./plugins/webhooks";
-export * from "./plugins/advancedTrade";
