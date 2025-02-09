@@ -17,7 +17,7 @@ import { type ChargeContent, ChargeSchema, isChargeContent } from "../types";
 import { chargeTemplate, getChargeTemplate } from "../templates";
 import { getWalletDetails } from "../utils";
 import { Coinbase } from "@coinbase/coinbase-sdk";
-
+import { ZodType } from "zod";
 const url = "https://api.commerce.coinbase.com/charges";
 interface ChargeRequest {
     name: string;
@@ -159,7 +159,7 @@ export const createCoinbaseChargeAction: Action = {
             runtime,
             context,
             modelClass: ModelClass.LARGE,
-            schema: ChargeSchema,
+            schema: ChargeSchema as ZodType,
         });
         if (!isChargeContent(chargeDetails.object)) {
             throw new Error("Invalid content");
@@ -416,7 +416,7 @@ export const getChargeDetailsAction: Action = {
             runtime,
             context,
             modelClass: ModelClass.LARGE,
-            schema: ChargeSchema,
+            schema: ChargeSchema as ZodType,
         });
         if (!isChargeContent(chargeDetails.object)) {
             throw new Error("Invalid content");
