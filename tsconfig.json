@@ -1,10 +1,26 @@
 {
-    "extends": "../core/tsconfig.json",
     "compilerOptions": {
         "outDir": "dist",
         "rootDir": ".",
         "rootDirs": ["src", "advanced-sdk-ts"],
-        "types": ["node"]
+        "types": ["node"],
+        "lib": ["ESNext", "dom"],
+        "module": "Preserve",
+        "moduleResolution": "Bundler",
+        "strict": false,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": false,
+        "allowImportingTsExtensions": true,
+        "declaration": true,
+        "emitDeclarationOnly": true,
+        "resolveJsonModule": true,
+        "noImplicitAny": false,
+        "allowJs": true,
+        "checkJs": false,
+        "noEmitOnError": false,
+        "moduleDetection": "force",
+        "allowArbitraryExtensions": true
     },
     "include": ["src/**/*.ts", "advanced-sdk-ts/src/**/*.ts"]
 }
