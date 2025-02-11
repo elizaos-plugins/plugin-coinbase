@@ -16,6 +16,7 @@ export default defineConfig({
         "@elizaos/core",
         "@elizaos/core",
         "@elizaos/core",
+        "@elizaos/core",
         "@coinbase/coinbase-sdk",
         "form-data",
         "combined-stream",
