@@ -20,7 +20,7 @@
   ],
   "dependencies": {
     "@types/jsonwebtoken": "^9.0.7",
-    "coinbase-advanced-sdk": "file:./advanced-sdk-ts",
+    "coinbase-advanced-sdk": "file:advanced-sdk-ts",
     "coinbase-api": "1.0.5",
     "jsonwebtoken": "^9.0.2",
     "node-fetch": "^2.6.1"
