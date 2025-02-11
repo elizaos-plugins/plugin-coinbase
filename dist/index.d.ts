@@ -8,5 +8,11 @@ declare const plugins: {
     webhookPlugin: _elizaos_core.Plugin;
     advancedTradePlugin: _elizaos_core.Plugin;
 };
+declare const mergedPlugins: {
+    actions: any[];
+    providers: any[];
+    evaluators: any[];
+    services: any[];
+};
 
-export { plugins };
+export { mergedPlugins as default, plugins };

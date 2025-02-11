@@ -7742,7 +7742,25 @@ var plugins = {
   webhookPlugin,
   advancedTradePlugin
 };
+function mergePlugins(base, plugins2) {
+  return {
+    ...base,
+    actions: [...plugins2.map((plugin) => plugin.actions)],
+    providers: [...plugins2.map((plugin) => plugin.providers)],
+    evaluators: [...plugins2.map((plugin) => plugin.evaluators)],
+    services: [...plugins2.map((plugin) => plugin.services)]
+  };
+}
+var mergedPlugins = mergePlugins(
+  {
+    name: "coinbase",
+    description: "Coinbase plugin. Enables various functionalities using the Coinbase SDK."
+  },
+  Object.values(plugins)
+);
+var index_default = mergedPlugins;
 export {
+  index_default as default,
   plugins
 };
 //# sourceMappingURL=index.js.map
