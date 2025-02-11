@@ -20,14 +20,16 @@
   ],
   "dependencies": {
     "@types/jsonwebtoken": "^9.0.7",
-    "coinbase-advanced-sdk": "file:advanced-sdk-ts",
     "coinbase-api": "1.0.5",
+    "csv-writer": "^1.6.0",
     "jsonwebtoken": "^9.0.2",
-    "node-fetch": "^2.6.1"
+    "node-fetch": "^2.6.1",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
     "tsup": "8.3.5",
+    "typescript": "^5.7.3",
     "vitest": "^3.0.0"
   },
   "scripts": {
