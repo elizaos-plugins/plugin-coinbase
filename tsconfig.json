@@ -1,9 +1,7 @@
 {
     "compilerOptions": {
         "outDir": "dist",
-        "rootDir": ".",
-        "rootDirs": ["src", "advanced-sdk-ts"],
-        "types": ["node"],
+        "rootDir": "src",
         "lib": ["ESNext", "dom"],
         "module": "Preserve",
         "moduleResolution": "Bundler",
@@ -22,5 +20,5 @@
         "moduleDetection": "force",
         "allowArbitraryExtensions": true
     },
-    "include": ["src/**/*.ts", "advanced-sdk-ts/src/**/*.ts"]
+    "include": ["src/**/*.ts"]
 }
