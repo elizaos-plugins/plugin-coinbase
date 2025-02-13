@@ -35,6 +35,4 @@ export const mergedPlugins = {
     .flat(),
 };
 
-console.log(mergedPlugins)
-
 export default mergedPlugins;

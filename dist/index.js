@@ -3706,7 +3706,6 @@ var mergedPlugins = {
   evaluators: Object.values(plugins).map((plugin) => plugin.evaluators).filter(Boolean).flat(),
   services: Object.values(plugins).map((plugin) => plugin.services).filter(Boolean).flat()
 };
-console.log(mergedPlugins);
 var index_default = mergedPlugins;
 export {
   index_default as default,
