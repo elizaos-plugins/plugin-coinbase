@@ -1230,6 +1230,7 @@ async function getAllCharges(apiKey) {
       }
     });
     if (!response.ok) {
+      console.error("response.status", response.statusText);
       throw new Error(
         `Failed to fetch all charges: ${response.statusText}`
       );
@@ -3697,25 +3698,19 @@ var plugins = {
   webhookPlugin,
   advancedTradePlugin
 };
-function mergePlugins(base, plugins2) {
-  return {
-    ...base,
-    actions: [...plugins2.map((plugin) => plugin.actions)],
-    providers: [...plugins2.map((plugin) => plugin.providers)],
-    evaluators: [...plugins2.map((plugin) => plugin.evaluators)],
-    services: [...plugins2.map((plugin) => plugin.services)]
-  };
-}
-var mergedPlugins = mergePlugins(
-  {
-    name: "coinbase",
-    description: "Coinbase plugin. Enables various functionalities using the Coinbase SDK."
-  },
-  Object.values(plugins)
-);
+var mergedPlugins = {
+  name: "coinbase",
+  description: "Coinbase plugin. Enables various functionalities using the Coinbase SDK.",
+  actions: Object.values(plugins).map((plugin) => plugin.actions).filter(Boolean).flat(),
+  providers: Object.values(plugins).map((plugin) => plugin.providers).filter(Boolean).flat(),
+  evaluators: Object.values(plugins).map((plugin) => plugin.evaluators).filter(Boolean).flat(),
+  services: Object.values(plugins).map((plugin) => plugin.services).filter(Boolean).flat()
+};
+console.log(mergedPlugins);
 var index_default = mergedPlugins;
 export {
   index_default as default,
+  mergedPlugins,
   plugins
 };
 //# sourceMappingURL=index.js.map

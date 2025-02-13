@@ -9,10 +9,12 @@ declare const plugins: {
     advancedTradePlugin: _elizaos_core.Plugin;
 };
 declare const mergedPlugins: {
-    actions: any[];
-    providers: any[];
-    evaluators: any[];
-    services: any[];
+    name: string;
+    description: string;
+    actions: _elizaos_core.Action[];
+    providers: _elizaos_core.Provider[];
+    evaluators: _elizaos_core.Evaluator[];
+    services: _elizaos_core.Service[];
 };
 
-export { mergedPlugins as default, plugins };
+export { mergedPlugins as default, mergedPlugins, plugins };
