@@ -66,6 +66,7 @@ export async function getAllCharges(apiKey: string) {
         });
 
         if (!response.ok) {
+            console.error("response.status", response.statusText);
             throw new Error(
                 `Failed to fetch all charges: ${response.statusText}`
             );

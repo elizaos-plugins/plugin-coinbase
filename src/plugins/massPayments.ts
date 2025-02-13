@@ -468,3 +468,4 @@ export const coinbaseMassPaymentsPlugin: Plugin = {
     actions: [sendMassPayoutAction],
     providers: [massPayoutProvider],
 };
+

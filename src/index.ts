@@ -14,20 +14,27 @@ export const plugins = {
   advancedTradePlugin,
 };
 
-function mergePlugins(base: object, plugins: any[]) {
-  return {
-    ...base,
-    actions: [...plugins.map((plugin) => plugin.actions)],
-    providers: [...plugins.map((plugin) => plugin.providers)],
-    evaluators: [...plugins.map((plugin) => plugin.evaluators)],
-    services: [...plugins.map((plugin) => plugin.services)],
-  };
-}
-const mergedPlugins = mergePlugins(
-  {
-    name: "coinbase",
-    description: "Coinbase plugin. Enables various functionalities using the Coinbase SDK.",
-  },
-  Object.values(plugins)
-);
+export const mergedPlugins = {
+  name: "coinbase",
+  description: "Coinbase plugin. Enables various functionalities using the Coinbase SDK.",
+  actions: Object.values(plugins)
+    .map((plugin) => plugin.actions)
+    .filter(Boolean)
+    .flat(),
+  providers: Object.values(plugins)
+    .map((plugin) => plugin.providers)
+    .filter(Boolean)
+    .flat(),
+  evaluators: Object.values(plugins)
+    .map((plugin) => plugin.evaluators)
+    .filter(Boolean)
+    .flat(),
+  services: Object.values(plugins)
+    .map((plugin) => plugin.services)
+    .filter(Boolean)
+    .flat(),
+};
+
+console.log(mergedPlugins)
+
 export default mergedPlugins;

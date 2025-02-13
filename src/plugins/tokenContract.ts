@@ -81,12 +81,8 @@ export const deployTokenContractAction: Action = {
 
         try {
             Coinbase.configure({
-                apiKeyName:
-                    runtime.getSetting("COINBASE_API_KEY") ??
-                    process.env.COINBASE_API_KEY,
-                privateKey:
-                    runtime.getSetting("COINBASE_PRIVATE_KEY") ??
-                    process.env.COINBASE_PRIVATE_KEY,
+                apiKeyName: runtime.getSetting("COINBASE_API_KEY") ?? process.env.COINBASE_API_KEY,
+                privateKey: runtime.getSetting("COINBASE_PRIVATE_KEY") ?? process.env.COINBASE_PRIVATE_KEY,
             });
 
             // Ensure CSV file exists
@@ -310,12 +306,8 @@ export const invokeContractAction: Action = {
 
         try {
             Coinbase.configure({
-                apiKeyName:
-                    runtime.getSetting("COINBASE_API_KEY") ??
-                    process.env.COINBASE_API_KEY,
-                privateKey:
-                    runtime.getSetting("COINBASE_PRIVATE_KEY") ??
-                    process.env.COINBASE_PRIVATE_KEY,
+                apiKeyName: runtime.getSetting("COINBASE_API_KEY") ?? process.env.COINBASE_API_KEY,
+                privateKey: runtime.getSetting("COINBASE_PRIVATE_KEY") ?? process.env.COINBASE_PRIVATE_KEY,
             });
 
             const context = composeContext({
@@ -477,12 +469,8 @@ export const readContractAction: Action = {
 
         try {
             Coinbase.configure({
-                apiKeyName:
-                    runtime.getSetting("COINBASE_API_KEY") ??
-                    process.env.COINBASE_API_KEY,
-                privateKey:
-                    runtime.getSetting("COINBASE_PRIVATE_KEY") ??
-                    process.env.COINBASE_PRIVATE_KEY,
+                apiKeyName: runtime.getSetting("COINBASE_API_KEY") ?? process.env.COINBASE_API_KEY,
+                privateKey: runtime.getSetting("COINBASE_PRIVATE_KEY") ?? process.env.COINBASE_PRIVATE_KEY,
             });
 
             const context = composeContext({
