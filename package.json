@@ -1,64 +1,64 @@
 {
-  "name": "@elizaos/plugin-coinbase",
-  "version": "0.25.6-alpha.1",
-  "type": "module",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "import": {
-        "@elizaos/source": "./src/index.ts",
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
-      }
+    "name": "@elizaos-plugins/plugin-coinbase",
+    "version": "0.25.6-alpha.1",
+    "type": "module",
+    "main": "dist/index.js",
+    "module": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "exports": {
+        "./package.json": "./package.json",
+        ".": {
+            "import": {
+                "@elizaos/source": "./src/index.ts",
+                "types": "./dist/index.d.ts",
+                "default": "./dist/index.js"
+            }
+        }
+    },
+    "files": [
+        "dist"
+    ],
+    "dependencies": {
+        "@types/jsonwebtoken": "^9.0.7",
+        "coinbase-api": "1.0.5",
+        "csv-writer": "^1.6.0",
+        "jsonwebtoken": "^9.0.2",
+        "node-fetch": "^2.6.1",
+        "zod": "^3.22.4"
+    },
+    "devDependencies": {
+        "@types/node": "^20.0.0",
+        "tsup": "8.3.5",
+        "typescript": "^5.7.3",
+        "vitest": "^3.0.0"
+    },
+    "scripts": {
+        "build": "tsup --format esm --dts",
+        "dev": "tsup --format esm --dts --watch",
+        "test": "vitest run",
+        "test:watch": "vitest"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "agentConfig": {
+        "pluginType": "elizaos:client:1.0.0",
+        "pluginParameters": {
+            "COINBASE_API_KEY": {
+                "type": "string",
+                "minLength": 1,
+                "description": "Coinbase API key for authentication"
+            },
+            "COINBASE_PRIVATE_KEY": {
+                "type": "string",
+                "minLength": 1,
+                "description": "Coinbase private key for signing requests"
+            },
+            "COINBASE_COMMERCE_KEY": {
+                "type": "string",
+                "optional": true,
+                "description": "Optional: Coinbase Commerce API key for merchant features"
+            }
+        }
     }
-  },
-  "files": [
-    "dist"
-  ],
-  "dependencies": {
-    "@types/jsonwebtoken": "^9.0.7",
-    "coinbase-api": "1.0.5",
-    "csv-writer": "^1.6.0",
-    "jsonwebtoken": "^9.0.2",
-    "node-fetch": "^2.6.1",
-    "zod": "^3.22.4"
-  },
-  "devDependencies": {
-    "@types/node": "^20.0.0",
-    "tsup": "8.3.5",
-    "typescript": "^5.7.3",
-    "vitest": "^3.0.0"
-  },
-  "scripts": {
-    "build": "tsup --format esm --dts",
-    "dev": "tsup --format esm --dts --watch",
-    "test": "vitest run",
-    "test:watch": "vitest"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "agentConfig": {
-    "pluginType": "elizaos:client:1.0.0",
-    "pluginParameters": {
-      "COINBASE_API_KEY": {
-        "type": "string",
-        "minLength": 1,
-        "description": "Coinbase API key for authentication"
-      },
-      "COINBASE_PRIVATE_KEY": {
-        "type": "string",
-        "minLength": 1,
-        "description": "Coinbase private key for signing requests"
-      },
-      "COINBASE_COMMERCE_KEY": {
-        "type": "string",
-        "optional": true,
-        "description": "Optional: Coinbase Commerce API key for merchant features"
-      }
-    }
-  }
 }
